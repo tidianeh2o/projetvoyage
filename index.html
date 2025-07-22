@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sous le Soleil Voyages – Site Complet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>.dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.burger {
+  font-size: 26px;
+  cursor: pointer;
+  background: #f5b041;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.burger:hover {
+  background: #e08e00;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background-color: #fffefc;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) scale(1.05);
+}
+
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff9f0;
+      margin: 0;
+      padding-top: 60px;
+      color: #333;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #f5b041;
+      color: rgb(42, 175, 9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown button {
+      background-color: #f5b041;
+      color: white;
+      padding: 10px 16px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    header {
+      text-align: center;
+      background-color:#c9c8bd;
+      padding: 30px 20px;
+    }
+    .lang-switch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: #fdf2e9;
+  padding: 15px 0;
+  position: relative;
+  z-index: 10;
+}
+
+    .lang-switch button {
+  padding: 8px 14px;
+  margin: 0;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f5b041;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.lang-switch button:hover {
+  background-color: #e08e00;
+}
+
+    .container, section {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    h2 {
+      color: #b45f06;
+      margin-top: 30px;
+    }
+    .tarif, .contact {
+      background-color: #fdf2e9;
+      padding: 20px;
+      margin-top: 30px;
+      border-left: 5px solid #f5b041;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    thead {
+      background-color: #f5b041;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #fdf2e9;
+    }
+    footer {
+      background-color: #f5b041;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    
+    }
+    @media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .dropdown button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .container, section {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .contact, .tarif {
+    padding: 15px;
+  }
+
+  .lang-switch button {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+    /* Ton style existant ici... */
+
+    .burger {
+      font-size: 26px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    @media screen and (max-width: 768px) {
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+  </style>
+</head>
+
+ 
+ </style>
+
+</head>
+<body>
+  <div class="dropdown">
+  
+  
+</div>
+
+
+<nav>
+  <div class="logo"><strong>Sous le Soleil</strong></div>
+  <div class="dropdown">
+    <button class="burger" onclick="toggleMenu()">☰ Menu</button>
+
+    <div id="menuContent" class="dropdown-content">
+      <a href="#accueil">🏠 Accueil</a>
+      <a href="#programme">📅 Programme</a>
+      <a href="#tarif">💶 Tarif</a>
+      <a href="#contact">📍 Contact</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById("menuContent");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+<div class="lang-switch">
+  <button onclick="showLang('fr')">🇫🇷 Français</button>
+  <button onclick="showLang('de')">🇩🇪 Deutsch</button>
+  <button onclick="showLang('en')">🇬🇧 English</button>
+</div>
+
+<header id="accueil">
+  <img src="logo.png" alt="Logo Sous le Soleil Voyages" style="max-width: 150px; height: auto; display: block; margin: 0 auto 15px;">
+  <h1 style="font-size: xxx-large;border: #b45f06;">Sous le Soleil Voyages</h1>s
+  <p id="slogan-fr">Explorez le Sénégal Authentique</p>
+  <p id="slogan-de" style="display: none;">Entdecken Sie das authentische Senegal</p>
+  <p id="slogan-en" style="display: none;">Explore Authentic Senegal</p>
+</header>
+<div class="container" id="content-fr">
+  <p>Partez pour une aventure inoubliable à travers le Sénégal : entre plages dorées, déserts magiques, parcs naturels et villes historiques.</p>
+  
+  <h2 id="programme">📅 13 Jours / 12 Nuits</h2>
+  <ul>
+    <li>Dakar & Île de Gorée : patrimoine, marchés, plages</li>
+    <li>Désert de Lompoul : nuit saharienne, dromadaires</li>
+    <li>Saint-Louis : UNESCO, balade en calèche</li>
+    <li>Lac Rose & Bandia : safari & baignade salée</li>
+    <li>Petite Côte & Sine Saloum : pirogue, plage, nature</li>
+  </ul>
+
+  <div class="tarif" id="tarif">
+    <h2>💶 Tarif</h2>
+    <p><strong>1.500 € / personne</strong> (hors vol)</p>
+    <p>Hébergement, repas, transports, activités & guide inclus</p>
+  </div>
+
+  <h2>✅ Inclus dans le programme</h2>
+  <ul>
+    <li>Hébergement de qualité</li>
+    <li>Repas traditionnels sénégalais</li>
+    <li>Transport intérieur avec chauffeur</li>
+    <li>Activités guidées</li>
+    <li>Accompagnement en français ou allemand</li>
+  </ul>
+  <section style="background-color: #fff9f0; padding: 30px; font-family: Arial, sans-serif; color: #333;">
+  <h2 style="color: #b45f06;">📅 Programme détaillé – 13 jours / 12 nuits</h2>
+
+  <div style="margin-top: 20px;">
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fdf2e9;">
+      <h3 style="margin: 0;">🛬 Jour 1 – Arrivée à Dakar</h3>
+      <p>Accueil à l’aéroport, transfert à l’hôtel, dîner de bienvenue et soirée libre.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fff;">
+      <h3 style="margin: 0;">🏙️ Jour 2 – Visite de Dakar & Île de Gorée</h3>
+      <p>Tour de ville (marchés, Médina, corniche), puis traversée vers l’île de Gorée pour découvrir son histoire et ses ruelles colorées.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fdf2e9;">
+      <h3 style="margin: 0;">🌅 Jour 3 – Lac Rose & Safari à Bandia</h3>
+      <p>Matinée au Lac Rose (baignade salée, découverte du sel), après-midi safari en 4x4 dans la réserve de Bandia.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fff;">
+      <h3 style="margin: 0;">🏜️ Jour 4 – Désert de Lompoul</h3>
+      <p>Départ vers le désert de Lompoul. Balade à dos de dromadaire, coucher de soleil et nuit sous tente saharienne.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fdf2e9;">
+      <h3 style="margin: 0;">🏛️ Jour 5 – Saint-Louis (ville UNESCO)</h3>
+      <p>Visite de l’ancienne capitale coloniale en calèche, découverte des bâtiments historiques et du pont Faidherbe.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fff;">
+      <h3 style="margin: 0;">🛶 Jour 6 – Parc du Djoudj ou Langue de Barbarie</h3>
+      <p>Excursion nature en pirogue dans l’un des plus grands parcs ornithologiques d’Afrique (en saison).</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fdf2e9;">
+      <h3 style="margin: 0;">🚐 Jour 7 – Route vers la Petite Côte</h3>
+      <p>Traversée de villages traditionnels, installation en bord de mer et après-midi détente à la plage.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fff;">
+      <h3 style="margin: 0;">🌴 Jour 8 – Joal-Fadiouth</h3>
+      <p>Découverte de l’île aux coquillages, du cimetière mixte et balade guidée dans le village de Joal, ville natale de Léopold Sédar Senghor.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fdf2e9;">
+      <h3 style="margin: 0;">🏖️ Jour 9 – Journée libre à la plage</h3>
+      <p>Repos, baignade, activités nautiques ou massage traditionnel selon vos envies.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fff;">
+      <h3 style="margin: 0;">🌊 Jour 10 – Delta du Sine Saloum</h3>
+      <p>Navigation en pirogue à travers les bolongs, découverte de la faune, des palétuviers et des villages insulaires.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fdf2e9;">
+      <h3 style="margin: 0;">🎶 Jour 11 – Rencontre culturelle & artisanat</h3>
+      <p>Ateliers de percussions, danses traditionnelles, visite d’un village sérère et d’un marché local.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fff;">
+      <h3 style="margin: 0;">💆 Jour 12 – Détente & soirée d’adieu</h3>
+      <p>Dernier jour libre pour profiter de la plage. Le soir, dîner d’adieu avec musique live ou animation locale.</p>
+    </div>
+
+    <div style="margin-bottom: 15px; padding: 15px; border-left: 5px solid #f5b041; background-color: #fdf2e9;">
+      <h3 style="margin: 0;">✈️ Jour 13 – Retour</h3>
+      <p>Transfert à l’aéroport selon les horaires de vol. Fin du séjour avec souvenirs inoubliables.</p>
+    </div>
+  </div>
+</section>
+
+
+  <div class="contact" id="contact">
+    <h2>📍 Réservation</h2>
+    <p>Email : contact@souslesoleilvoyages.com</p>
+    <p>WhatsApp : 004917699775788</p>
+    <p>Instagram / TikTok : @souslesoleil.voyages</p>
+  </div>
+
+  <h2>🗣️ Témoignages de nos clients</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+    <div style="flex: 1 1 200px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; border-radius: 10px;">
+      <img src="HANNESS.jpg" alt="HANNESS BODDIEN" style="width:100%; height:auto; border-radius: 10px;">
+      <p><strong>HANNESS BODDIEN</strong><br>"Un voyage magique, tout était parfaitement organisé !"</p>
+    </div>
+    <div style="flex: 1 1 200px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; border-radius: 10px;">
+      <img src="CARMELA.jpg" alt="CARMELA SENFETT" style="width:100%; height:auto; border-radius: 10px;">
+      <p><strong>CARMELA SENFETT</strong><br>"J’ai adoré l’accueil et les paysages incroyables."</p>
+    </div>
+    <div style="flex: 1 1 200px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; border-radius: 10px;">
+      <img src="samb.jpg" alt="ABOU SAMB" style="width:100%; height:auto; border-radius: 10px;">
+      <p><strong>ABOU SAMB</strong><br>"Un vrai retour aux sources avec beaucoup d’émotions."</p>
+    </div>
+  </div>
+
+  <h2>📸 Photos de nos clients</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+    <img src="photo1.jpg" alt="Voyageur 1" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo2.jpg" alt="Voyageur 2" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo3.jpg" alt="Voyageur 3" style="width:100%; height:auto; border-radius: 10px;">
+  
+    <img src="photo5.jpg" alt="Voyageur 5" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo6.jpg" alt="Voyageur 6" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo7.jpg" alt="Voyageur 7" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo8.jpg" alt="Voyageur 8" style="width:100%; height:auto; border-radius: 10px;">
+  </div>
+<div class="contact">
+  <h2>📨 Formulaire de réservation</h2>
+  <form action="mailto:tidianelo92@gmail.com" method="post" enctype="text/plain">
+    <label>Nom :<br><input type="text" name="Nom" required></label><br><br>
+    <label>Email :<br><input type="email" name="Email" required></label><br><br>
+    <label>Message :<br><textarea name="Message" rows="4" required></textarea></label><br><br>
+    <button type="submit">Envoyer ✉️</button>
+  </form>
+</div>
+</div>
+<div class="container" id="content-de" style="display: none;">
+  <p>Begeben Sie sich auf ein unvergessliches Abenteuer durch den Senegal: Goldene Strände, magische Wüsten, Naturparks und historische Städte erwarten Sie.</p>
+  
+  <h2>📅 13 Tage / 12 Nächte</h2>
+  <ul>
+    <li>Dakar & Île de Gorée: Geschichte, Märkte, Strände</li>
+    <li>Wüste Lompoul: Übernachtung im Zelt, Dromedarritt</li>
+    <li>Saint-Louis: UNESCO-Stadt, Kutschfahrt</li>
+    <li>Rosa See & Bandia: Safari & Salzbaden</li>
+    <li>Küste & Sine Saloum: Pirogenfahrt, Natur, Erholung</li>
+  </ul>
+
+  <div class="tarif">
+    <h2>💶 Preis</h2>
+    <p><strong>1.500 € / Person</strong> (ohne Flug)</p>
+    <p>Unterkunft, Verpflegung, Transport, Aktivitäten & Führung inklusive</p>
+  </div>
+
+  <h2>Im Programm enthalten</h2>
+  <ul>
+    <li>Komfortable Unterkünfte</li>
+    <li>Traditionelle senegalesische Küche</li>
+    <li>Alle Inlandsfahrten mit Fahrer</li>
+    <li>Geführte Aktivitäten</li>
+    <li>Begleitung auf Französisch oder Deutsch</li>
+  </ul>
+
+  <div class="contact">
+    <h2>📍 Buchung & Kontakt</h2>
+    <p>Email: contact@souslesoleilvoyages.com</p>
+    <p>WhatsApp: +4917699775788</p>
+    <p>Instagram / TikTok: @souslesoleil.voyages</p>
+  </div>
+
+  <h2>🗣️ Erfahrungsberichte unserer Kunden</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+    <div style="flex: 1 1 200px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; border-radius: 10px;">
+      <img src="HANNESS.jpg" alt="Kunde 1" style="width:100%; height:auto; border-radius: 10px;">
+      <p><strong>HANNESS BODDIEN</strong><br>"Eine magische Reise, alles war perfekt organisiert!"</p>
+    </div>
+    <div style="flex: 1 1 200px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; border-radius: 10px;">
+      <img src="CARMELA.jpg" alt="Kunde 2" style="width:100%; height:auto; border-radius: 10px;">
+      <p><strong>CARMELA SENFETT</strong><br>"Ich habe die Gastfreundschaft und die unglaublichen Landschaften geliebt."</p>
+    </div>
+    <div style="flex: 1 1 200px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; border-radius: 10px;">
+      <img src="samb.jpg" alt="Kunde 3" style="width:100%; height:auto; border-radius: 10px;">
+      <p><strong>ABOU SAMB</strong><br>"Eine echte Rückkehr zu den Wurzeln mit vielen Emotionen."</p>
+    </div>
+  </div>
+
+  <h2>📸 Fotos unserer Kunden</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+    <img src="photo1.jpg" alt="Reisender 1" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo2.jpg" alt="Reisender 2" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo3.jpg" alt="Reisender 3" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo4.jpg" alt="Reisender 4" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo5.jpg" alt="Reisender 5" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo6.jpg" alt="Reisender 6" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo7.jpg" alt="Reisender 7" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo8.jpg" alt="Reisender 8" style="width:100%; height:auto; border-radius: 10px;">
+  </div>
+
+<div class="contact">
+  <h2>📨 Buchungsformular</h2>
+  <form action="mailto:tidianelo90@gmail.com" method="post" enctype="text/plain">
+    <label>Name :<br><input type="text" name="Name" required></label><br><br>
+    <label>Email :<br><input type="email" name="Email" required></label><br><br>
+    <label>Nachricht :<br><textarea name="Nachricht" rows="4" required></textarea></label><br><br>
+    <button type="submit">Absenden ✉️</button>
+  </form>
+</div></div>
+<div class="container" id="content-en" style="display: none;">
+  <p>Embark on an unforgettable adventure through Senegal: golden beaches, magical deserts, nature reserves, and historical cities await you.</p>
+
+  <h2>📅 13 Days / 12 Nights</h2>
+  <ul>
+    <li>Dakar & Gorée Island: culture, markets, beaches</li>
+    <li>Lompoul Desert: desert camp, camel rides</li>
+    <li>Saint-Louis: UNESCO site, horse carriage ride</li>
+    <li>Pink Lake & Bandia Reserve: safari & salty swim</li>
+    <li>Petite Côte & Sine Saloum: canoe, nature, beach</li>
+  </ul>
+
+  <div class="tarif">
+    <h2>💶 Price</h2>
+    <p><strong>1,500 € / person</strong> (excluding flight)</p>
+    <p>Accommodation, meals, transport, activities & guide included</p>
+  </div>
+
+  <h2>Included in the program</h2>
+  <ul>
+    <li>Comfortable accommodation</li>
+    <li>Traditional Senegalese meals</li>
+    <li>All inland transport with driver</li>
+    <li>Guided activities</li>
+    <li>Support in French or German</li>
+  </ul>
+
+  <div class="contact">
+    <h2>📍 Booking & Contact</h2>
+    <p>Email: contact@souslesoleilvoyages.com</p>
+    <p>WhatsApp: +4917699775788</p>
+    <p>Instagram / TikTok: @souslesoleil.voyages</p>
+  </div>
+
+  <h2>🗣️ Customer Testimonials</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+    <div style="flex: 1 1 200px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; border-radius: 10px;">
+      <img src="HANNESS.jpg" alt="HANNESS BODDIEN" style="width:100%; height:auto; border-radius: 10px;">
+      <p><strong>HANNESS BODDIEN</strong><br>"A magical journey, everything was perfectly organized!"</p>
+    </div>
+    <div style="flex: 1 1 200px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; border-radius: 10px;">
+      <img src="CARMELA.jpg" alt="CARMELA SENFETT" style="width:100%; height:auto; border-radius: 10px;">
+      <p><strong>CARMELA SENFETT</strong><br>"I loved the hospitality and the incredible landscapes."</p>
+    </div>
+    <div style="flex: 1 1 200px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; border-radius: 10px;">
+      <img src="samb.jpg" alt="ABOU SAMB" style="width:100%; height:auto; border-radius: 10px;">
+      <p><strong>ABOU SAMB</strong><br>"A true return to the roots filled with emotion."</p>
+    </div>
+  </div>
+
+  <h2>📸 Photos from our guests</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+    <img src="photo1.jpg" alt="Guest 1" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo2.jpg" alt="Guest 2" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo3.jpg" alt="Guest 3" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo4.jpg" alt="Guest 4" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo5.jpg" alt="Guest 5" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo6.jpg" alt="Guest 6" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo7.jpg" alt="Guest 7" style="width:100%; height:auto; border-radius: 10px;">
+    <img src="photo8.jpg" alt="Guest 8" style="width:100%; height:auto; border-radius: 10px;">
+  </div>
+
+<div class="contact">
+  <h2>📨 Booking Form</h2>
+  <form action="tidianelo92@gmail.com" method="post" enctype="text/plain">
+    <label>Name:<br><input type="text" name="Name" required></label><br><br>
+    <label>Email:<br><input type="email" name="Email" required></label><br><br>
+    <label>Message:<br><textarea name="Message" rows="4" required></textarea></label><br><br>
+    <button type="submit">Send ✉️</button>
+  </form>
+</div>
+</div>
+<footer>
+  © 2025 Sous le Soleil Voyages – Tous droits réservés.
+</footer>
+
+<script>
+  function showLang(lang) {
+    const langs = ['fr', 'de', 'en'];
+    langs.forEach(l => {
+      document.getElementById('content-' + l).style.display = 'none';
+      const slogan = document.getElementById('slogan-' + l);
+      if (slogan) slogan.style.display = 'none';
+    });
+
+    document.getElementById('content-' + lang).style.display = 'block';
+    const slogan = document.getElementById('slogan-' + lang);
+    if (slogan) slogan.style.display = 'block';
+  }
+
+  // Langue par défaut
+  showLang('fr');
+
+  // Fermer le menu si on clique ailleurs
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById("menuContent");
+    const button = document.querySelector(".dropdown button");
+    if (!button.contains(e.target) && !menu.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>
