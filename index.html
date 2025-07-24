@@ -23,7 +23,7 @@
 }
 
 .burger:hover {
-  background: #e08e00;
+  background: #196406;
 }
 
 .dropdown-content {
@@ -75,7 +75,7 @@
       background-color: #f5b041;
       color: rgb(42, 175, 9);
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
       padding: 10px 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -84,6 +84,7 @@
     .dropdown {
       position: relative;
       display: inline-block;
+      margin-left: auto;
     }
     .dropdown button {
       background-color: #f5b041;
@@ -118,12 +119,16 @@
     }
     header {
       text-align: center;
-      background-color:#c9c8bd;
-      padding: 30px 20px;
+      background-image: url(plan2.jpg); /* Le nom de ton image */
+      background-size: cover;
+      background-position: right;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 40px 20px;
     }
     .lang-switch {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 10px;
   background-color: #fdf2e9;
   padding: 15px 0;
@@ -219,6 +224,9 @@
     padding: 15px;
   }
 
+  .lang-switch {
+    justify-content: flex-end;
+  }
   .lang-switch button {
     font-size: 14px;
     padding: 4px 8px;
@@ -254,11 +262,133 @@
       to {opacity: 1; transform: translateY(0);}
     }
 
-  </style>
+  /* Bloc header dupliqué supprimé, le style correct est déjà défini plus haut */
+</style>
 </head>
 
  
- </style>
+ <style>
+/* Animation d'apparition des sections */
+/* (Animation d'apparition des sections supprimée pour revenir à l'état slides) */
+/* Logo animé */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  animation: fadeSlideIn 1s ease-in-out;
+}
+
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Langues */
+.lang-switch button.active {
+  background-color: #e67e22;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+/* Témoignage avec effet hover */
+.testimonial:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Bouton retour en haut */
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  background-color: #f5b041;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#topBtn:hover {
+  background-color: #e08e00;
+}
+
+/* Carrousel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+.carousel img {
+  width: 100%;
+  display: none;
+}
+.carousel img.active {
+  display: block;
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Carrousel photos clients */
+.client-carousel-box {
+display: flex;
+align-items: center;
+justify-content: center;
+background: #fff;
+border-radius: 18px;
+box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+padding: 32px 24px;
+max-width: 800px;
+margin: 40px auto 30px auto;
+position: relative;
+}
+.client-carousel-img-wrapper {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+min-width: 400px;
+min-height: 320px;
+}
+.carousel-arrow {
+background: #f5b041;
+border: none;
+color: white;
+font-size: 3em;
+border-radius: 50%;
+width: 64px;
+height: 64px;
+cursor: pointer;
+box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+transition: background 0.2s;
+margin: 0 16px;
+opacity: 0;
+pointer-events: none;
+}
+.client-carousel-box:hover .carousel-arrow {
+opacity: 1;
+pointer-events: auto;
+}
+.carousel-arrow:hover {
+  background: #e08e00;
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: transform 0.35s cubic-bezier(.25,.8,.25,1), box-shadow 0.35s, border 0.35s;
+}
+.client-carousel-img-wrapper img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 12px 40px rgba(245,176,65,0.30), 0 6px 24px rgba(0,0,0,0.22);
+  border: 5px solid #f5b041;
+}
+</style>
 
 </head>
 <body>
@@ -269,7 +399,7 @@
 
 
 <nav>
-  <div class="logo"><strong>Sous le Soleil</strong></div>
+  
   <div class="dropdown">
     <button class="burger" onclick="toggleMenu()">☰ Menu</button>
 
@@ -296,11 +426,28 @@ function toggleMenu() {
 </div>
 
 <header id="accueil">
-  <img src="logo.png" alt="Logo Sous le Soleil Voyages" style="max-width: 150px; height: auto; display: block; margin: 0 auto 15px;">
-  <h1 style="font-size: xxx-large;border: #b45f06;">Sous le Soleil Voyages</h1>s
-  <p id="slogan-fr">Explorez le Sénégal Authentique</p>
+  <img src="logo.png" alt=" Soleil Voyages" style="max-width: 30%; height: auto; display: block; margin: 0 0 15px 10%;">
+ 
+  <p id="slogan-fr" style="
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 8px #b45f06, 0 4px 20px #0008;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #f5b041 0%, #fff9f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    display: inline-block;
+    position: relative;
+    left: 0;
+    z-index: 2;
+  ">Explorez le Sénégal Authentique</p>
   <p id="slogan-de" style="display: none;">Entdecken Sie das authentische Senegal</p>
   <p id="slogan-en" style="display: none;">Explore Authentic Senegal</p>
+
 </header>
 <div class="container" id="content-fr">
   <p>Partez pour une aventure inoubliable à travers le Sénégal : entre plages dorées, déserts magiques, parcs naturels et villes historiques.</p>
@@ -424,16 +571,16 @@ function toggleMenu() {
   </div>
 
   <h2>📸 Photos de nos clients</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
-    <img src="photo1.jpg" alt="Voyageur 1" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo2.jpg" alt="Voyageur 2" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo3.jpg" alt="Voyageur 3" style="width:100%; height:auto; border-radius: 10px;">
-  
-    <img src="photo5.jpg" alt="Voyageur 5" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo6.jpg" alt="Voyageur 6" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo7.jpg" alt="Voyageur 7" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo8.jpg" alt="Voyageur 8" style="width:100%; height:auto; border-radius: 10px;">
+  <div class="client-carousel-box">
+    <button class="carousel-arrow left" onclick="prevClientPhoto()">&#8592;</button>
+    <div class="client-carousel-img-wrapper">
+      <img id="client-carousel-img" src="photo1.jpg" alt="Voyage 1" style="width:100%; height:auto; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+    </div>
+    <button class="carousel-arrow right" onclick="nextClientPhoto()">&#8594;</button>
   </div>
+
+
+ 
 <div class="contact">
   <h2>📨 Formulaire de réservation</h2>
   <form action="mailto:tidianelo92@gmail.com" method="post" enctype="text/plain">
@@ -495,16 +642,7 @@ function toggleMenu() {
   </div>
 
   <h2>📸 Fotos unserer Kunden</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
-    <img src="photo1.jpg" alt="Reisender 1" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo2.jpg" alt="Reisender 2" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo3.jpg" alt="Reisender 3" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo4.jpg" alt="Reisender 4" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo5.jpg" alt="Reisender 5" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo6.jpg" alt="Reisender 6" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo7.jpg" alt="Reisender 7" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo8.jpg" alt="Reisender 8" style="width:100%; height:auto; border-radius: 10px;">
-  </div>
+  
 
 <div class="contact">
   <h2>📨 Buchungsformular</h2>
@@ -566,16 +704,7 @@ function toggleMenu() {
   </div>
 
   <h2>📸 Photos from our guests</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
-    <img src="photo1.jpg" alt="Guest 1" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo2.jpg" alt="Guest 2" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo3.jpg" alt="Guest 3" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo4.jpg" alt="Guest 4" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo5.jpg" alt="Guest 5" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo6.jpg" alt="Guest 6" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo7.jpg" alt="Guest 7" style="width:100%; height:auto; border-radius: 10px;">
-    <img src="photo8.jpg" alt="Guest 8" style="width:100%; height:auto; border-radius: 10px;">
-  </div>
+  
 
 <div class="contact">
   <h2>📨 Booking Form</h2>
@@ -616,7 +745,36 @@ function toggleMenu() {
       menu.style.display = "none";
     }
   });
+
+  // Carrousel photos clients
+const clientPhotos = [
+  {src: "photo1.jpg", alt: "Voyage 1"},
+  {src: "photo2.jpg", alt: "Voyage 2"},
+  {src: "photo3.jpg", alt: "Voyage 3"},
+  {src: "photo5.jpg", alt: "Voyage 5"},
+  {src: "photo6.jpg", alt: "Voyage 6"},
+  {src: "photo7.jpg", alt: "Voyage 7"},
+  {src: "photo8.jpg", alt: "Voyage 8"}
+];
+let clientPhotoIndex = 0;
+function showClientPhoto(idx) {
+  const img = document.getElementById('client-carousel-img');
+  if (!img) return;
+  clientPhotoIndex = (idx + clientPhotos.length) % clientPhotos.length;
+  img.src = clientPhotos[clientPhotoIndex].src;
+  img.alt = clientPhotos[clientPhotoIndex].alt;
+}
+function prevClientPhoto() {
+  showClientPhoto(clientPhotoIndex - 1);
+}
+function nextClientPhoto() {
+  showClientPhoto(clientPhotoIndex + 1);
+}
+document.addEventListener('DOMContentLoaded', function() {
+  showClientPhoto(clientPhotoIndex);
+});
 </script>
 
+<button onclick="scrollToTop()" id="topBtn" title="Retour en haut">🔝</button>
 </body>
 </html>
